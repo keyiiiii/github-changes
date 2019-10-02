@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
 var _ = require('lodash');
 var http = require('http');
 var https = require('https');
@@ -63,11 +62,6 @@ opts = parser
   .option('token', {
     abbr: 'k'
   , help: 'need to use this or --auth for private repos and higher rate limits'
-  })
-  .option('file', {
-    abbr: 'f'
-  , help: 'name of the file to output the changelog to'
-  , default: 'CHANGELOG.md'
   })
   .option('title', {
     abbr: 't'
@@ -560,7 +554,7 @@ var task = function() {
       return data;
     })
     .then(function(data){
-      fs.writeFileSync(opts.file, formatter(data));
+      console.log(formatter(data));
     })
     .then(function(){
       process.exit(0);

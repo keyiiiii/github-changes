@@ -24,7 +24,6 @@ Options:
    -n, --tag-name      tag name for upcoming release  [upcoming]
    -a, --auth          prompt to auth with Github - use this for private repos and higher rate limits
    -k, --token         need to use this or --auth for private repos and higher rate limits
-   -f, --file          name of the file to output the changelog to  [CHANGELOG.md]
    -t, --title         title to appear in the top of the changelog  [Change Log]
    -z, --time-zone     time zone  [UTC]
    -m, --date-format   date format  [(YYYY/MM/DD HH:mm Z)]
