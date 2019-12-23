@@ -555,6 +555,7 @@ var task = function() {
     })
     .then(function(data){
       console.log(formatter(data));
+      return formatter(data);
     })
     .then(function(){
       process.exit(0);
