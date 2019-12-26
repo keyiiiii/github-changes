@@ -113,6 +113,10 @@ opts = parser
     help: 'only include pull requests'
   , flag: true
   })
+  .option('crlf', {
+    help: 'change line feed code'
+  , flag: true
+  })
   .option('use-commit-body', {
     help: 'use the commit body of a merge instead of the message - "Merge branch..."'
   , flag: true
@@ -554,8 +558,12 @@ var task = function() {
       return data;
     })
     .then(function(data){
-      console.log(formatter(data));
-      return formatter(data);
+      let result = formatter(data);
+      if (opts.crlf) {
+        result = formatter(data).replace(/\n/g, '\\r\\n');
+      }
+      console.log(result);
+      return result;
     })
     .then(function(){
       process.exit(0);

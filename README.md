@@ -40,6 +40,7 @@ Options:
    --order-semver      use semantic versioning for the ordering instead of the tag date
    --reverse-changes   reverse the order of changes within a release (show oldest first)
    --hide-tag-names    hide tag names in changelog
+   --crlf              change line feed code
 ```
 
 ### Example usage
